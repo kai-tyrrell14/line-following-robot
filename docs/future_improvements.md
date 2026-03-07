@@ -1,15 +1,12 @@
 # Future Improvements
 ## 1. Closed-Loop Motor Speed Control
-In the current system, open-loop PWM control is 
+In the current system, open-loop PWM control is used to control motor speed. Through the implementation of wheel encoders closed-loop control could be used to improve accuracy and performance.
 
-## 2. Adaptive Controller Gains
-Controller gains are currently fixed for all operating conditions. Adaptive gain scheduling based on robot speed or curvature could improve performance in both straight sections and tight turns.
+## 2. Improved Sensor Resolution
+Increasing the number of sensors or resolution of the sensors could provide a more accurate estimate of the line's position which would improve performance through more complex curves. However, this would require a microcontroller with more analog inputs.
 
-## 3. Improved Sensor Resolution
-Increasing the number of sensors or using higher-resolution reflectance sensors could provide more precise line position estimation and improve tracking accuracy in complex curves.
+## 3. Improved Chassis Design
+Improving the design of the chassis would allow for more effective mounting of components. For example, the battery could be mounted more centrally and the microcontroller more effectively. These changes could also help reduce any biases the robot may have to one side.
 
-## 4. Improved Chassis Design
-Mechanical improvements such as better wheel alignment, improved traction, and a more rigid chassis could reduce drivetrain imbalance and improve overall stability.
-
-## 5. Automatic Sensor Calibration
-Future versions of the robot could perform automatic calibration during startup to determine optimal white and black reference values. This would improve reliability under changing lighting conditions.
+## 4. Automatic Sensor Calibration
+In future, instead of calibrating the sensor limits once and applying them to all scenarios, the sensors could be automatically calibrated at the beginning of each run to ensure stabilility on different tracks.
