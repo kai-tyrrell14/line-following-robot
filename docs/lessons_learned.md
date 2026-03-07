@@ -1,39 +1,13 @@
 # Lessons Learned
+## 1. Sensor calibration is critical
+In order to correctly follow the line the sensor arrays input must be correctly calibrated and weighted. Incorrect sensor ordering initially caused the robot to steer in the wrong direction, highlighting how small errors can significantly affect system behaviour.
 
-## 1. Sensor Interpretation is Critical
+## 2. Mechanical imperfections must be accounted for
+Even when both motors receive identical commands, small differences in mechanical components can cause noticeable drift.
+Testing revealed that these imbalances required software compensation through trim adjustments to achieve stable straight-line motion.
 
-Reliable line-following behaviour depends heavily on correct interpretation of sensor data. Incorrect sensor ordering initially caused the robot to steer in the wrong direction, demonstrating how small configuration errors can significantly affect system behaviour.
+## 3. Controller tuning through iteration
+In order to achieve the required performance several of the values in the code needed to be tuned. The final result required a number of iterations to find the best combination of values.
 
-Verifying sensor layout and calibration early in development proved essential for stable control.
-
----
-
-## 2. Mechanical Imperfections Affect Control
-
-Even when both motors receive identical commands, small differences in drivetrain components can cause noticeable drift.
-
-Testing revealed that drivetrain imbalance required software compensation through trim adjustments and deadband handling to achieve stable straight-line motion.
-
----
-
-## 3. Controller Tuning Requires Iteration
-
-Achieving stable behaviour required multiple cycles of testing and tuning. Controller gains that worked well on straight sections did not always perform well in curves or tight turns.
-
-Iterative testing across different track geometries was necessary to balance responsiveness and stability.
-
----
-
-## 4. Special Cases Need Dedicated Logic
-
-Standard PD control alone was not sufficient for all track conditions. Tight U-turns required additional logic to increase turning authority.
-
-Introducing a hard-turn mode significantly improved the robot’s ability to navigate extreme curvature.
-
----
-
-## 5. Structured Debugging Improves Development
-
-Using small diagnostic programs to test individual subsystems—such as sensor ordering and motor drift—made it easier to isolate problems.
-
-Breaking the system into smaller components allowed issues to be identified and resolved more efficiently.
+## 4. Special cases needed specific logic
+The standard line following strategy accounted for most track geometries, however u-turns or turns with a tight radius were unsuccessful. In order to successfully complete these turns additional logic specific to these turns was required. Introducing a hard turn mode significantly improved the robot’s ability to navigate these curves.
