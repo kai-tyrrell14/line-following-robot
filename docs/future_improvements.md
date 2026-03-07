@@ -9,4 +9,4 @@ Increasing the number of sensors or resolution of the sensors could provide a mo
 Improving the design of the chassis would allow for more effective mounting of components. For example, the battery could be mounted more centrally and the microcontroller more effectively. These changes could also help reduce any biases the robot may have to one side.
 
 ## 4. Automatic Sensor Calibration
-In future, instead of calibrating the sensor limits once and applying them to all scenarios, the sensors could be automatically calibrated at the beginning of each run to ensure stabilility on different tracks.
+In future, instead of calibrating the sensor limits once and applying them to all scenarios, the sensors could be automatically calibrated at the beginning of each run to ensure stability on different tracks.
